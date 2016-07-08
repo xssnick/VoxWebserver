@@ -5,7 +5,9 @@ High perfomance C++ webserver
   Создать системную переменную **VoxWebBin** - путь до скомпилированого API
   Библиотеки для компиляции:
     pq (apt-get)
+    
     pqxx (собрать из исходников с параметром -fPIC)
+    
     openssl (apt-get)
 
   _Опционально:_
