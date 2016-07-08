@@ -7,9 +7,9 @@
 #include <unistd.h>
 #include <sys/epoll.h>
 
-#include "Site.h"
-#include "NetworkHelper.h"
-#include "../PacketProcessor.h"
+#include "../PageTypes/Site.h"
+#include "../Network/NetworkHelper.h"
+#include "../../VoxWebserver/Processors/PacketProcessor.h"
 
 Connection::Connection(Webserver *server)
 {

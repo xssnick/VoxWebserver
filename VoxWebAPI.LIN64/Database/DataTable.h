@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_DATATABLE_H
 #define VOXWEBSERVER_LIN64_DATATABLE_H
 
-#include "VoxWebAPI.h"
+#include "../VoxWebAPI.h"
 
 class DataTable
 {

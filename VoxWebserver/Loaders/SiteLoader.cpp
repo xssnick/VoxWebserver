@@ -7,7 +7,7 @@
 #include <dlfcn.h>
 #include <boost/algorithm/string/predicate.hpp>
 #include "SiteLoader.h"
-#include "PacketProcessor.h"
+#include "../Processors/PacketProcessor.h"
 
 void SiteLoader::LoadAll(string path)
 {

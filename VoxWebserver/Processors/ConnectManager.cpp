@@ -1,11 +1,11 @@
 //
 // Created by root on 13.06.16.
 //
-#include "thpool.h"
-#include "settings.h"
+#include "../Custom/thpool.h"
+#include "../../settings.h"
 #include "ConnectManager.h"
 #include "PacketProcessor.h"
-#include "VoxWebAPI.LIN64/NetworkHelper.h"
+#include "Network/NetworkHelper.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
@@ -20,7 +20,7 @@ bool ConnectManager::Started = false;
 
 void ConnectManager::StartServer(int port)
 {
-	int listener; //server socket
+	int listener;
 	struct sockaddr_in addr, their_addr;
 	addr.sin_family = PF_INET;
 	addr.sin_port = htons(port);
@@ -30,18 +30,12 @@ void ConnectManager::StartServer(int port)
 	socklen = sizeof(struct sockaddr_in);
 
 	static struct epoll_event ev, events[EPOLL_SIZE];
-	//     watch just incoming(EPOLLIN)
 	ev.events = EPOLLIN | EPOLLRDHUP;
 
-	//     epoll descriptor to watch events
-
 	int client, epoll_events_count;
-
 	listener = socket(PF_INET, SOCK_STREAM, 0);
 
 	setnonblocking(listener);
-
-	//    bind listener to address(addr)
 	if (bind(listener, (struct sockaddr *) &addr, sizeof(addr)) != 0)
 	{
 		printf("Cant get access to that port\n");
@@ -60,7 +54,7 @@ void ConnectManager::StartServer(int port)
 
 	printf("Started! epool:%d\n", PacketProcessor::Web->MainEPoll);
 
-	//TODO: we have big memory leak, possibly when sending files
+	//TODO: possible memory leak or ???
 	while (Started)
 	{
 		epoll_events_count = epoll_wait(PacketProcessor::Web->MainEPoll, events, EPOLL_SIZE, EPOLL_RUN_TIMEOUT);
@@ -87,7 +81,7 @@ void ConnectManager::StartServer(int port)
 					Connection *con = (Connection *) events[i].data.ptr;
 					if (con->Processing)
 					{
-						//printf("W");
+
 						continue;
 					}
 					ssize_t count = 0;
@@ -100,7 +94,6 @@ void ConnectManager::StartServer(int port)
 						{
 							if (errno != EAGAIN && errno != EWOULDBLOCK)
 							{
-								//printf("ER %d |%s\n",errno,strerror(errno));
 								fail = true;
 							}
 							delete[] buf;
@@ -136,13 +129,9 @@ void ConnectManager::StartServer(int port)
 						//while(con->GotData && con->Connected)
 						//{
 						con->Processing = true;
-						thpool_add_work(thpool, (void *(*)(void *)) PacketProcessor::OnConnect,
-										con);// PacketProcessor::OnConnect(con);
+						thpool_add_work(thpool, (void *(*)(void *)) PacketProcessor::OnConnect, con);
 						//PacketProcessor::OnConnect(con);
 						//}
-					} else
-					{
-						//printf("R");
 					}
 				}
 			} else if (events[i].events & EPOLLOUT)

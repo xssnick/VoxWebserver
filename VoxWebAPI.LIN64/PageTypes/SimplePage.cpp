@@ -1,7 +1,7 @@
 //
 // Created by root on 17.06.16.
 //
-#include "HttpRequest.h"
+#include "SimplePage.h"
 
 SimplePage::SimplePage(string url, SimplTempl templ) : Page(url, false)
 {

@@ -6,7 +6,7 @@
 #define VOXWEBSERVER_LIN64_FILEMANAGER_H
 
 
-#include "VoxWebAPI.LIN64/HttpRequest.h"
+#include "RequestTypes/HttpRequest.h"
 
 class FileManager
 {

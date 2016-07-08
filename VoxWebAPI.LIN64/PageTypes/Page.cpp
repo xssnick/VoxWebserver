@@ -1,7 +1,7 @@
 //
 // Created by root on 14.06.16.
 //
-#include "HttpRequest.h"
+#include "../RequestTypes/HttpRequest.h"
 
 Page::Page(string url, bool dynamic)
 {

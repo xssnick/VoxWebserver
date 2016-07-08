@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_HTTPREQUEST_H
 #define VOXWEBSERVER_LIN64_HTTPREQUEST_H
 
-#include "VoxWebAPI.h"
+#include "../VoxWebAPI.h"
 
 enum RequestType
 {

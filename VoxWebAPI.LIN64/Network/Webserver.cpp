@@ -1,7 +1,7 @@
 //
 // Created by root on 14.06.16.
 //
-#include "Site.h"
+#include "../PageTypes/Site.h"
 
 Webserver::Webserver(ServerMode mode)
 {

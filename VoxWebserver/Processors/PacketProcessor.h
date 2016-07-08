@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_PACKETPROCESSOR_H
 #define VOXWEBSERVER_LIN64_PACKETPROCESSOR_H
 
-#include "settings.h"
+#include "../settings.h"
 
 class PacketProcessor
 {

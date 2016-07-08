@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_WEBSERVER_H
 #define VOXWEBSERVER_LIN64_WEBSERVER_H
 
-#include "VoxWebAPI.h"
+#include "../VoxWebAPI.h"
 
 enum ServerMode
 {

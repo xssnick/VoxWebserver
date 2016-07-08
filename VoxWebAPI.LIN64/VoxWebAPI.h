@@ -47,22 +47,22 @@ enum Protocol
 	HTTP = 1, HTTP_TLS = 2, WEBSOCKET = 4, WEBSOCKET_TLS = 8
 };
 
-#include "voxchain.h"
-#include "voxcrypt.h"
-#include "voxstring.h"
+#include "Ext/voxchain.h"
+#include "Ext/voxcrypt.h"
+#include "Ext/voxstring.h"
 
 #ifndef _VX_INSIDE_API__
 
-#include "Postgres.h"
-#include "Page.h"
-#include "Connection.h"
-#include "HttpRequest.h"
-#include "WebSocket.h"
-#include "Webserver.h"
-#include "DataFileStorage.h"
-#include "ProcessPage.h"
-#include "SimplePage.h"
-#include "Site.h"
+#include "Database/Postgres.h"
+#include "PageTypes/Page.h"
+#include "RequestTypes/Connection.h"
+#include "RequestTypes/HttpRequest.h"
+#include "RequestTypes/WebSocket.h"
+#include "Network/Webserver.h"
+#include "Database/DataFileStorage.h"
+#include "PageTypes/ProcessPage.h"
+#include "PageTypes/SimplePage.h"
+#include "PageTypes/Site.h"
 
 #endif
 

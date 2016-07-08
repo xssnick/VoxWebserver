@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_SITE_H
 #define VOXWEBSERVER_LIN64_SITE_H
 
-#include "VoxWebAPI.h"
+#include "../VoxWebAPI.h"
 #include <stdarg.h>
 
 class Page;

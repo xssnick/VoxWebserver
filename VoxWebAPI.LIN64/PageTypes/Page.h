@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_PAGE_H
 #define VOXWEBSERVER_LIN64_PAGE_H
 
-#include "VoxWebAPI.h"
+#include "../VoxWebAPI.h"
 
 
 class HttpRequest;

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <csignal>
 #include <execinfo.h>
-#include "ConnectManager.h"
-#include "SiteLoader.h"
-#include "PacketProcessor.h"
+#include "Processors/ConnectManager.h"
+#include "Loaders/SiteLoader.h"
+#include "Processors/PacketProcessor.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"

@@ -5,7 +5,7 @@
 #ifndef VOXWEBSERVER_LIN64_CONNECTMANAGER_H
 #define VOXWEBSERVER_LIN64_CONNECTMANAGER_H
 
-#include "settings.h"
+#include "../../settings.h"
 
 #include <iostream>
 #include <sys/types.h>
@@ -19,12 +19,6 @@
 #include <stdio.h>
 #include <list>
 #include <time.h>
-
-#define WORK_THREADS_NUM 8
-//#define SERVER_PORT 80
-#define SERVER_HOST "0.0.0.0"
-#define EPOLL_RUN_TIMEOUT 300
-#define EPOLL_SIZE 16000
 
 
 class ConnectManager
